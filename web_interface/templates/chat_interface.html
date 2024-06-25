@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Interface</title>
+    <style>
+        .chat-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .chat-box {
+            width: 60%;
+            height: 70%;
+            overflow-y: auto;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .message {
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .message.left {
+            background-color: #e1ffc7;
+            align-self: flex-start;
+        }
+
+        .message.right {
+            background-color: #c7e1ff;
+            align-self: flex-end;
+        }
+
+        .input-container {
+            display: flex;
+            align-items: center;
+            width: 60%;
+        }
+
+        .input-text-box {
+            flex-grow: 1;
+            padding: 10px;
+            margin-right: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .chat-button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .chat-button:not(:last-child) {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="chat-container">
+        <div class="chat-box" id="chat-box"></div>
+        <div class="input-container">
+            <input
+                class="input-text-box"
+                type="text"
+                id="input-text-box"
+                placeholder="Type your message here..."
+            />
+            <button class="chat-button" id="send-button" type="button">Send</button>
+            <button class="chat-button" id="propose-button">Make a Proposal</button>
+        </div>
+    </div>
+
+    <!-- Modal templates would go here -->
+    <!-- Modal -->
+    <div class="modal" id="propose-modal">
+        <div class="modal-content">
+            <span class="close" id="close-modal">&times;</span>
+            <form id="propose-form">
+                <div>
+                    <label for="books">Books:</label>
+                    <select id="books-select"></select>
+                </div>
+                <div>
+                    <label for="hats">Hats:</label>
+                    <select id="hats-select"></select>
+                </div>
+                <div>
+                    <label for="balls">Balls:</label>
+                    <select id="balls-select"></select>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="results-popup-overlay" id="results-modal">
+        <div class="results-popup">
+            <h2>Game Over</h2>
+            <div class="results-content">
+                <p>User score: <span id="user-score"></span></p>
+                <p>Assistant score: <span id="assistant-score"></span></p>
+            </div>
+            <button class="close-button" id="close-button">Close</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+
+    
+</body>
+</html>

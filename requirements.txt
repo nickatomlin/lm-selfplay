@@ -1,0 +1,12 @@
+boto3
+Flask
+Flask_Cors
+Flask_SocketIO
+gunicorn
+numpy
+openai
+python-dotenv
+
+eventlet
+gevent-websocket
+

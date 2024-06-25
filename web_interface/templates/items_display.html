@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Items Display</title>
+    <style>
+        .items-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .item-row {
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+        }
+
+        .item {
+            margin: 0 10px;
+        }
+
+        .item-image {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="items-container" id="items-container">
+        <div class="item-row" id="books-row"></div>
+        <div class="item-row" id="hats-row"></div>
+        <div class="item-row" id="balls-row"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const booksCount = 5; // Example count, replace with dynamic data
+            const hatsCount = 3; // Example count, replace with dynamic data
+            const ballsCount = 4; // Example count, replace with dynamic data
+
+            const booksRow = document.getElementById('books-row');
+            const hatsRow = document.getElementById('hats-row');
+            const ballsRow = document.getElementById('balls-row');
+
+            const bookImageSrc = '../static/assets/book.png';
+            const hatImageSrc = '../static/assets/hat.jpeg';
+            const ballImageSrc = '../static/assets/ball.png';
+
+            function addItem(row, count, imageSrc, altText) {
+                for (let i = 0; i < count; i++) {
+                    const itemDiv = document.createElement('div');
+                    itemDiv.className = 'item';
+                    const img = document.createElement('img');
+                    img.src = imageSrc;
+                    img.alt = altText;
+                    img.className = 'item-image';
+                    itemDiv.appendChild(img);
+                    row.appendChild(itemDiv);
+                }
+            }
+
+            addItem(booksRow, booksCount, bookImageSrc, 'book');
+            addItem(hatsRow, hatsCount, hatImageSrc, 'hat');
+            addItem(ballsRow, ballsCount, ballImageSrc, 'ball');
+        });
+    </script>
+</body>
+</html>

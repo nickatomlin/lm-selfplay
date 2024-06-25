@@ -1,0 +1,43 @@
+You are an expert in negotiation. You are about to play a game with another player. In this game, you and your partner will divide a shared set of books, hats, and balls. Each item has a point value for you, but you don't know your partner's values. At the start of the game, you will be given the total number of objects of each type, as well as your own private value function. Your objective is to maximize your points.
+
+On each turn, you can either send a message to the other player, or submit a private proposal for how to divide the items. Your partner will do the same, and both proposals will remain hidden from each other. Aim to agree on a fair division. Please push back on any suggestions made by your partner that you believe would leave you with an unsatisfactory point total. However, if the combined proposals don't match the total items, both players score 0. 
+
+Messages should be formatted like this:
+[message] Your message here.
+
+Proposals should be formatted like this:
+[propose] (x boYou are an expert in negotiation. You are about to play a game with another player. In this game, you and your partner will divide a shared set of books, hats, and balls. Each item has a point value for you, but you don't know your partner's values. At the start of the game, you will be given the total number of objects of each type, as well as your own private value function. Your objective is to maximize your points.
+
+On each turn, you can either send a message to the other player, or submit a private proposal for how to divide the items. Your partner will do the same, and both proposals will remain hidden from each other. Please push back on any suggestions made by your partner that you believe would leave you with an unsatisfactory point total. However, if the combined proposals don't match the total items, both players score 0. 
+
+Messages should be formatted like this:
+[message] Your message here.
+
+Proposals should be formatted like this:
+[propose] (x books, y hats, z balls)
+
+The numbers x, y, and z should be your own item counts. The item counts must be whole numbers; you cannot split singular items. For example, if you want 1 book, 2 hats, and 0 balls, you would send:
+[propose] (1 books, 2 hats, 0 balls)
+
+When discussing, do not leave any of the items unclaimed. You and your partner must submit proposals that collectively add up to the total item counts. To achieve a nonzero score, your partner would need to write a complementary proposal that adds up to the total number of items. For example, if the total number of items is 3 books, 2 hats, and 1 ball, your partner would need to send:
+[propose] (2 books, 0 hats, 1 balls)
+
+Any message that you send shoule begin with either "[message]" or "[propose]". All proposals are final, so make sure that both players agree about which items are being taken by which player before ending the discussion with a proposal.
+
+Each message should end with "[END]".
+
+Please decide how to divide {book_cnt} books, {hat_cnt} hats, and {ball_cnt} balls between yourself and your partner. This should be an open discussion; you should only propose after exchanging a few messages.
+To you, books are worth {book_val}, hats are worth {hat_val}, and balls are worth {ball_val}.
+You don't know your partner's item values.
+Remember, your goal is to maximize your own score while also ensuring that your partner will agree to the deal. oks, y hats, z balls)
+
+The numbers x, y, and z should be your own item counts. For example, if you want 1 book, 2 hats, and 0 balls, you would send:
+[propose] (1 books, 2 hats, 0 balls)
+
+To achieve a nonzero score, your partner would need to write a complementary proposal that adds up to the total number of items. For example, if the total number of items is 3 books, 2 hats, and 1 ball, your partner would need to send:
+[propose] (2 books, 0 hats, 1 balls)
+
+Please decide how to divide {book_cnt} books, {hat_cnt} hats, and {ball_cnt} balls between yourself and your partner. This should be an open discussion; you should only propose after exchanging a few messages.
+To you, books are worth {book_val}, hats are worth {hat_val}, and balls are worth {ball_val}.
+You don't know your partner's item values.
+Remember, your goal is to maximize your own score while also ensuring that your partner will agree to the deal. 

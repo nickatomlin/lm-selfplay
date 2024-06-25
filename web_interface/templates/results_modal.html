@@ -1,0 +1,94 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results Modal</title>
+    <style>
+        /* Styles from ResultsModal.css */
+        .results-popup-overlay {
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .results-popup {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            width: 300px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: auto;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .close-button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .close-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="results-popup-overlay" id="results-modal">
+        <div class="results-popup">
+            <h2>Game Over</h2>
+            <div class="results-content">
+                <p>User score: <span id="user-score"></span></p>
+                <p>Assistant score: <span id="assistant-score"></span></p>
+            </div>
+            <p> <span id="explanation"> Explanation </span>span> </p>
+            <button class="close-button" id="close-button">Close</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const resultsModal = document.getElementById('results-modal');
+            const closeButton = document.getElementById('close-button');
+            const userScoreSpan = document.getElementById('user-score');
+            const assistantScoreSpan = document.getElementById('assistant-score');
+            const explanationSpan = document.getElementById('explanation');
+
+            function openModal(userScore, assistantScore, explanation) {
+                userScoreSpan.textContent = userScore;
+                assistantScoreSpan.textContent = assistantScore;
+                explanationSpan.textContent = explanation;
+                resultsModal.style.display = 'block';
+            }
+
+            closeButton.addEventListener('click', () => {
+                resultsModal.style.display = 'none';
+            });
+
+            // Example function to open the modal (replace with your own logic)
+            // document.getElementById('open-results-modal-button').addEventListener('click', () => openModal(100, 90));
+
+            // Assuming you have a socket connection
+            // const socket = io.connect('http://127.0.0.1:5003');
+
+            // socket.on('game_over', (data) => {
+            //     const userScore = data.user_score;
+            //     const assistantScore = data.assistant_score;
+            //     openModal(userScore, assistantScore);
+            // });
+        });
+    </script>
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+</body>
+</html> -->

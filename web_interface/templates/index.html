@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My App</title>
+    <link rel="stylesheet" href="../static/styles.css">
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+</head>
+<body>
+    <div class="App">
+        <header id="App-header" class="App-header">
+            <div id="landing-page">
+                <h1>Dialogue Negotiation Game</h1>
+                <p>
+                    In this game, you will be shown a set of objects. Your goal is to divide these objects between yourself and another player to maximize your score.
+                </p>
+                <p>
+                    Each item is worth a different number of points to you.
+                </p>
+                <p>
+                    The game is broken into two phases:
+                    <ol>
+                        <li><b>Discussion</b>: chat with your partner to determine how to split the objects. Make sure you come to a complete agreement before ending this phase.</li>
+                        <li><b>Proposal</b>: choose which objects you will receive. In order to receive any points, your partner will need to choose a complementary set of objects.</li>
+                    </ol>
+                    <i>Your partner won't be able to see the proposal you make.</i> Once either player makes a proposal, chat will be disabled. Decide carefully!
+                </p>
+                <div id="task-screenshot-container">
+                    <img id="task-screenshot" src="../static/assets/annotated-screenshot.png" alt="Task Screenshot">
+                </div>
+                <p>The game has two modes. In <b style="color: blueviolet;">competitive</b> mode, your goal is to maximize your own score. In <b style="color: green;">cooperative</b> mode, your goal is to maximize the sum of both players' scores.
+                    <!-- In <b style="color: mediumvioletred;">competitive</b> mode, your goal is to maximize the difference between your score and your partner's score. -->
+                     However, you won't your partner's item values.</p>
+                <!-- <p id="game-mode-text"></p> -->
+                 <div id="payment">
+                    <p>
+                        You can play up to 40 games. The max score is 10 in competitive and 20 in cooperative mode. You will receive bonus pay based on your score:
+                        <table>
+                            <tr>
+                                <th>Each Game Completed</th>
+                                <th>Each Point Earned (<span style="color: blueviolet;">Competitive</span>)</th>
+                                <th>Each Point Earned (<span style="color: green;">Cooperative</span>)</th>
+                                <!-- <th>Each Point Earned (<span style="color: mediumvioletred;">Competitive</span>)</th> -->
+                                <th>Model Error</th>
+                            </tr>
+                            <tr>
+                                <td>$0.10</td>
+                                <td>$0.20</td>
+                                <td>$0.10</td>
+                                <!-- <td>$0.30</td> -->
+                                <td>$0.25</td>
+                        </table>
+                        
+                    </p>
+                    <p>You can earn a maximum of $2.10 per game. At the end of each game, you will be given an option to end the HIT or keep playing. Bonus pay will be distributed within 24 hours of completing the HIT; in order to receive full bonus pay, you must put a good faith effort into the game (i.e., no spamming the same message every time).</p>
+                 </div>
+                <div id="checkbox">
+                    <!-- Check this box to confirm you have read the instructions and are ready to start -->
+                    <input type="checkbox" id="instructions-checkbox">
+                    <label for="instructions-checkbox">Check this box to confirm you have read the instructions and are ready to start</label>
+                </div>
+                <button disabled style="opacity: 50%; cursor: not-allowed;" id="start-game-button">Start Game</button>
+            </div>
+            <!-- <div id="instructions">Instructions </div> -->
+
+            <div id="main-layout" class="main-layout" style="display: none;">
+                <div id="items-display-container"></div>
+                <div id="instructions-container"></div>
+                <div id="chat-interface-container"></div>
+            </div>
+        </header>
+    </div>
+
+    <!-- Load Modals -->
+    <!-- Propose Modal HTML -->
+    <div class="modal" id="propose-modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close" id="close-modal">&times;</span>
+            <form id="propose-form">
+                <div>
+                    <label for="books">Books:</label>
+                    <select id="books-select"></select>
+                </div>
+                <div>
+                    <label for="hats">Hats:</label>
+                    <select id="hats-select"></select>
+                </div>
+                <div>
+                    <label for="balls">Balls:</label>
+                    <select id="balls-select"></select>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>    
+
+    <!-- Results Modal HTML -->
+    <div class="results-popup-overlay" id="results-modal" style="display: none;">
+        <div class="results-popup">
+            <h2>Game Over</h2>
+            <div class="results-content">
+                <p>User score: <span id="user-score"></span></p>
+                <p>Partner score: <span id="assistant-score"></span></p>
+            </div>
+            <p> <b>Explanation:</b> <span id="explanation"></span></p>
+            <div class="close-button" id="close-results-modal">Close</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../static/scripts.js"></script>
+</body>
+</html>
