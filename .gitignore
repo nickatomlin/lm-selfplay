@@ -55,7 +55,6 @@ docs/_build/
 
 web_interface/backend/game_logs/
 web_interface/backend/mturk/.env
-data/
 game_logs/
 
 **/.DS_Store
