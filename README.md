@@ -1,6 +1,6 @@
 # Analyzing Language Model Self-Play
 
-Code for the paper "Efficacy of Language Model Self-Play in Non-Zero-Sum Games." We run experiments on a modified version of the Deal or No Deal game, originally introduced in [Lewis, et al. (2017)](https://arxiv.org/abs/1706.05125). This repository includes code for (1) evaluating language models on Deal or No Deal, (2) finetuning language models via self-play, and (3) a web interface for human-LM experiments.
+Code for the paper ["Efficacy of Language Model Self-Play in Non-Zero-Sum Games."](https://arxiv.org/abs/2406.18872) We run experiments on a modified version of the Deal or No Deal game, originally introduced in [Lewis, et al. (2017)](https://arxiv.org/abs/1706.05125). This repository includes code for (1) evaluating language models on Deal or No Deal, (2) finetuning language models via self-play, and (3) a web interface for human-LM experiments.
 
 <img width="1424" alt="Task" src="https://github.com/nickatomlin/negotiation/assets/13228316/b7e76231-8ab2-4aed-b2d6-a333b8f24943">
 
@@ -82,10 +82,13 @@ If you run into any issues with our code, please feel free to open a GitHub Issu
 ## Citation
 
 ```
-@article{liao2024efficacy,
-  title={Efficacy of Language Model Self-Play in Non-Zero-Sum Games},
-  author={Liao, Austen and Tomlin, Nicholas and Klein, Dan},
-  journal={arXiv preprint}
-  year={2024}
+@misc{liao2024efficacylanguagemodelselfplay,
+      title={Efficacy of Language Model Self-Play in Non-Zero-Sum Games}, 
+      author={Austen Liao and Nicholas Tomlin and Dan Klein},
+      year={2024},
+      eprint={2406.18872},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2406.18872}, 
 }
 ```
