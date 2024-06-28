@@ -2,7 +2,7 @@
 
 Code for the paper ["Efficacy of Language Model Self-Play in Non-Zero-Sum Games."](https://arxiv.org/abs/2406.18872) We run experiments on a modified version of the Deal or No Deal game, originally introduced in [Lewis, et al. (2017)](https://arxiv.org/abs/1706.05125). This repository includes code for (1) evaluating language models on Deal or No Deal, (2) finetuning language models via self-play, and (3) a web interface for human-LM experiments.
 
-<img width="1424" alt="Task" src="https://github.com/nickatomlin/negotiation/assets/13228316/b7e76231-8ab2-4aed-b2d6-a333b8f24943">
+<img width="1321" alt="Screenshot 2024-06-27 at 5 31 47 PM" src="https://github.com/nickatomlin/lm-selfplay/assets/13228316/51fac111-a590-4ee7-844d-1109e17376fe">
 
 ## Setup
 
